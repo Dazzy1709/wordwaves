@@ -3,6 +3,7 @@
 * {
   margin: 0;
   padding: 0;
+  
 }
 
 :root {
@@ -14,6 +15,11 @@
   --hover-background-color: #06293d3f; 
   --hover-box-shadow: inset 1px 1px 12px #fafafa1e;
   --border-sections: 1.3px solid #dbdbdb41;
+
+  --lightmode-background-color: #ffffff;
+  --lightmode-text-color: #000000;
+  --lightmode-secondary-textcolor: #3e3e3e;
+  --lightmode-content-backgroundcolor: #d5d5d541; 
 }
 
 body {
@@ -21,9 +27,8 @@ body {
   color: var(--text-color);
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   display: grid;
-  grid-template-columns: 25% 1fr 27%;
-  grid-template-rows: 10% 1fr; 
-
+  grid-template-columns: 17% 50% 23% 10%;
+  grid-template-rows: repeat(6, 1fr); 
 }
 
 button {
@@ -42,29 +47,127 @@ input:focus {
 }
 
 
+/* SVGs */
 
 
-/*header*/
 
-header {
-  text-align: left;
-  border-right:var(--border-sections);
-  position: fixed;
-  overflow: hidden;
-  z-index: 2;
-  width: 25%;
-  height: 100%;
-  background-color: var(--background-color);
+
+/* All toggles */
+
+#idToggleBtn.active {
+  transform: rotate(0deg);
+  transition: 0.25s ease-in-out;
+  
+}
+
+main.active{
+  grid-area: 2/1/9/3;
+  transition: all 1s ease-in, 1s ease-in;
+}
+
+
+
+#idTopSection.active {
+  left: 0%;
+  transition: .5s ease-in, .5s ease-in;
+  width: 100%;
 }
 
 header.toggle {
   position: static;
   display: none;
- 
+  transition: .5s ease-in, .5s ease-in;
 }
 
+body.light {
+  background-color: var(--lightmode-background-color);
+  color: var(--lightmode-text-color);
+  border: #000000;
+  transition: .5s ease-in, .5s ease-in;
+}
+
+#idHeader.light {
+  background-color: var(--lightmode-background-color);
+  color: #000000; 
+  border-right: 1px solid #696969;
+  transition: .5s ease-in, .5s ease-in;
+}
+
+#idTopSection.light {
+  background-color: var(--lightmode-background-color);
+  color: #000000;
+  border-bottom: 1px solid #696969;
+  transition: .5s ease-in, .5s ease-in;
+
+}
+
+#idCreateContent.light {
+  background-color: var(--lightmode-background-color);
+  color: var(--lightmode-text-color);
+  border-bottom: 1px solid #696969;
+  transition: .5s ease-in, .5s ease-in;
+}
+
+#idMain.light {
+  border-right: 1px solid #696969;
+  transition: .5s ease-in, .5s ease-in;
+}
+
+#idContentSection.light {
+  background-color: var(--lightmode-content-backgroundcolor);
+  border-top: 1px solid #696969;
+  transition: .5s ease-in, .5s ease-in;
+}
+
+#idColorBtn.light {
+  background-color: var(--background-color);
+  color: #ffffff;
+  transition: .5s ease-in, .5s ease-in;
+}
+
+#idRightSection.light {
+  background-color: var(--lightmode-background-color);
+  color: var(--lightmode-text-color);
+  transition: .5s ease-in, .5s ease-in;
+}
+
+.top-section-heading.light {
+  color: var(--lightmode-secondary-textcolor);
+  transition: .5s ease-in, .5s ease-in;
+}
+
+#idPostBtn.light {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  transition: .5s ease-in, .5s ease-in;
+}
+
+#idToggleBtn.light {
+  color: var(--lightmode-text-color);
+}
+
+.top-section-heading.light {
+  color: var(--lightmode-secondary-textcolor);
+  transition: .5s ease-in, .5s ease-in;
+}
+
+
+/*header*/
+
+header {
+  border-right:var(--border-sections);
+  position: fixed;
+  overflow: hidden;
+  z-index: 2;
+  width: 17%;
+  height: 100%;
+  background-color: var(--background-color);
+}
+
+
+
 h1 {
-  font-size: 2.2em;
+  font-size: 2vw;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   margin: 10px;
 }
@@ -92,6 +195,7 @@ header nav ul {
 header nav li {
   padding: 4% 0px;
   width: 100%;
+  margin: 10px;
 }
 
 header nav li:hover {
@@ -127,18 +231,21 @@ header nav .user-title {
 .top-section {
   display: flex;
   justify-content: space-evenly;
-  position: fixed;
   z-index: 1;
-  left: 25%;
-  height: 7%;
+  grid-column: 1/3 ;
+  grid-row: 1/3;
   margin: auto 0px;
-  width: 48.05%;
+  width: 100%;
   background-color: var(--background-color);
   border-bottom: var(--border-sections);
+  color: black;
+  position: fixed;
+  left: 17%;
 }
 
+
 .top-section h2 {
-  font-size: 1.5vh;
+  font-size: 1.7vh;
   padding: 1.2rem;
   margin: auto 2rem;
   color: var(--secondary-text-color);
@@ -147,8 +254,8 @@ header nav .user-title {
 
 .top-section span {
   cursor: pointer;
-  transform: rotate(90deg);
-  margin: 20px;
+  transform:rotate(90deg);
+  color: white;
 }
 
 .top-section span:hover {
@@ -173,19 +280,11 @@ header nav .user-title {
 }
 
 
-
 /*Main content section*/
 
 main {
-  grid-area: 2/2/9/3;
-  width: 100%;
+  grid-area: 2/2/6/3;
   border-right: var(--border-sections);
-
-
-}
-
-#idCreateContent {
-  height: 30%;
 }
 
 
@@ -205,16 +304,17 @@ main {
 #idCreateContent figure input {
   background: none;
   border: none;
-  margin: 20px auto;
-  width: 100%;
+  margin: 0px auto;
+  width: 80%;
   padding: 1.5vw;
   border-bottom: var(--border-sections);
   font-size: 1.3rem;
   color: white;
 }
+
 #idCreateContent figure input::placeholder {
-  font-size: 1.3vw;
-  color: rgba(186, 186, 186, 0.511);
+  font-size: 1.5vw;
+  color: rgba(186, 186, 186, 0.373);
 }
 
 #idCreateContent {
@@ -240,9 +340,11 @@ main {
 }
 
 
+
+
 /*Feed section*/ 
 
-#idContentSection {
+#idContentSection  {
   border-top: var(--border-sections);
   height: auto;
   margin-top: 3rem;
@@ -327,16 +429,12 @@ main {
   padding-right: 2rem;
 }
 
-.right-section #idColorBtn  {
-  position: absolute;
-  top: 0px;
-  width: 27%;
-  background-color: white;
-  z-index: 10;
-  height: 7%;
-  position: fixed;
-  top: 0px;
 
+#idColorBtn  {
+  height: 70%;
+  margin: auto 0px;
+  padding: 10px;
+  border-radius: 10px;
 }
 
 .community-tab {
@@ -363,7 +461,6 @@ main {
   margin: 20px;
   padding: 10px;
   border-radius: 5px;
-  background-color: white;
   
 }
 
@@ -420,22 +517,22 @@ footer {
 
 /* Media querys*/
 
-@media only screen and (max-width: 1400px) and (min-width: 350px) {
+@media only screen and (max-width: 1250px) and (min-width: 350px) {
 
 
   header {
-    width: 23.5%;
+    width: 17%;
     text-align: center;
     overflow: hidden;
   }
 
   h1 {
-    font-size: 3.5vw;
+    font-size: 2vw;
   }
 
 
   header li span {
-    display: none;
+    display: none
   }
 
 
@@ -445,7 +542,7 @@ footer {
 
   header nav svg {
     width: 30px;
-    margin: 4px 0px;
+    margin: 8px 0px;
     padding: 2%;
   }
 
@@ -465,14 +562,20 @@ footer {
   .top-section h2 {
     padding: 0.5rem;
     border-radius: 10px;
+    font-size: 10px;
   }
-  
 
+  .top-section {
+    height: 4.5%;
+  }
+
+  #idColorBtn {
+    font-size: 10px;
+  }
 
   #profile-btn {
     width: 100%;
   }
-
 
   .right-section,
   footer {
@@ -488,11 +591,12 @@ footer {
   }
 
   main {
+    grid-column-end: 5;
     width: 100%;
   }
 
   #idCreateContent {
-    width: 70vw;
+    width: 100%;
   }
 
 
