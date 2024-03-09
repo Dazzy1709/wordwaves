@@ -57,6 +57,7 @@ input:focus {
 #idToggleBtn.active {
   transform: rotate(0deg);
   transition: 0.25s ease-in-out;
+  padding-top: 20px;
   
 }
 
@@ -258,6 +259,11 @@ header nav .user-title {
   color: white;
 }
 
+#idColorBtn  {
+  border-radius: 10px;
+  padding: 15px;
+}
+
 .top-section span:hover {
   background-color: var(--hover-background-color);
 }
@@ -283,14 +289,16 @@ header nav .user-title {
 /*Main content section*/
 
 main {
-  grid-area: 2/2/6/3;
+  grid-area: 1/2/6/3;
   border-right: var(--border-sections);
+  margin-top: 130px;
 }
 
 
 #idCreateContent form {
   display: inline-flex;
   width: 100%;
+  margin: 40px;
 }
  
 #idCreateContent figure img {
@@ -304,7 +312,6 @@ main {
 #idCreateContent figure input {
   background: none;
   border: none;
-  margin: 0px auto;
   width: 80%;
   padding: 1.5vw;
   border-bottom: var(--border-sections);
@@ -421,58 +428,49 @@ main {
 /*Right section*/
 
 .right-section {
-  grid-area: 1/3/5/4;
+  grid-area: 2/3/5/5;
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   justify-content: center;
-  text-align: center;
-  padding-right: 2rem;
+  width: 100%;
 }
 
 
-#idColorBtn  {
-  height: 70%;
-  margin: auto 0px;
-  padding: 10px;
-  border-radius: 10px;
-}
+
 
 .community-tab {
   border: none;
   background-color: #205f8629;
-  position: relative;
-  top: 100px;
   margin: 0px 20px;
   border-radius: 20px;
   height: auto;
 }
 
 .community-tab figcaption {
-  font-size: 1.6rem;
+  font-size: 2rem;
   font-weight: bold;
   margin: 40px;
 }
 
 .community-tab p {
-  margin: 20px;
+  padding: 40px;
 }
 
 .community-tab button {
-  margin: 20px;
-  padding: 10px;
+  padding: 20px;
   border-radius: 5px;
+  margin: 40px;
+  font-size: 1.2rem;
   
 }
 
 .friends-list {
   border: none;
   background-color: #205f8629;
-  position: relative;
-  top: 150px;
-  z-index: -1;
-  margin: 0px 20px;
   border-radius: 20px;
-  height: 100%;
+  width: 100%;
+  margin: 40px 20px;
+  text-align: center;
 }
 
 .friends-list>figcaption {
@@ -486,8 +484,8 @@ main {
 
 .friends-list figure img {
   border-radius: 50%;
-  width: 60px;
-  height: 7vh;
+  width: 13%;
+  height: 13%;
   margin: 10px;
 }
 
@@ -501,6 +499,10 @@ main {
 .friends-list figure {
   display: flex;
   align-items: center;
+  border: 2px solid rgb(255, 255, 255);
+  border-radius: 10px;
+  margin: 20px;
+  font-size: 20px;
 }
 
 
@@ -527,7 +529,7 @@ footer {
   }
 
   h1 {
-    font-size: 2vw;
+    font-size: 1.6vw;
   }
 
 
@@ -593,12 +595,12 @@ footer {
   main {
     grid-column-end: 5;
     width: 100%;
+    border-right: none;
   }
 
   #idCreateContent {
     width: 100%;
   }
-
 
   #idCreateContent button {
     font-size: 10px;
@@ -615,8 +617,6 @@ footer {
   #idCreateContent figure input::placeholder {
     font-size: 0.6rem;
   }
-
-
 
   .content-interaction li svg {
     width: 15px;
